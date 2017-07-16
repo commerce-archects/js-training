@@ -20,6 +20,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 console.log("Commerce Architects JS training server is running...");
 
 // set the base url of the service
-app.use("/ca/v1/", routes);
+app.use("/ca/v1/example/", routes);
 
 app.listen(3000);

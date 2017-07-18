@@ -1,11 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var axios = require('axios');
 
 // example GET endpoint fetchign JSON
-router.get("/json/", function(req, res, next) {
+router.get("/json/", function(req, res, next){
 	res.status(200).json({
-		"array":[1,2,3,4,5,6,7,8,9,10]
+		"boolean": true,
+		"array": ["one", "two", "three", "four", "five"],
+		'string': "This is a string",
+		"json": {
+			"nested": "This is a nested json property"
+		}
 	});
 });
 

@@ -1,13 +1,18 @@
 // client-side javascript
 $(document).ready(function() { 
  	
+ 	$.ajaxSetup({xhrFields: { withCredentials: true } });
+
  	console.log("client ready");
 
- 	// GET request the json endpoint and iterate over the 'array'
- 	$.get("/ca/v1/example/json", function( data ) {
- 		$(data.array).each(function(number) {
- 			$(".result").append("<br/>" + number);
- 		});
-	});
+	$('#show').on('click', function() {
 
+		// GET request the json endpoint and iterate over the 'array'
+	 	$.getJSON("http://localhost:4444/new/json", function( data ) {
+	 		$(data.array).each(function(index, number) {
+	 			$(".result").append("<br/>" + number);
+	 		});
+		});
+
+	});
 });
